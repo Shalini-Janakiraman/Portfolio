@@ -11,7 +11,7 @@
       name="keywords"
       content="Shalini J, Computer Science, Portfolio, Skills, Education, Contact"
     />
-    <title>Shalini J - Computer Science Professional</title>
+    <title>Shalini J - Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
       rel="stylesheet"
@@ -331,7 +331,7 @@
               Hi, I'm <span class="gradient-text">Shalini J</span>
             </h1>
             <h2 class="text-2xl md:text-3xl font-medium text-gray-700 mb-6">
-              Computer Science Professional
+              Computer Science Professional 
             </h2>
             <p class="text-gray-600 mb-8 text-lg">
               A dedicated computer science professional with strong technical
@@ -1031,18 +1031,21 @@
       const mobileMenuButton = document.getElementById('mobile-menu-button');
       const mobileMenu = document.getElementById('mobile-menu');
 
-      mobileMenuButton.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-        mobileMenu.classList.toggle('active');
-      });
+      if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', (e) => {
+          e.stopPropagation();
+          mobileMenu.classList.toggle('hidden');
+          mobileMenu.classList.toggle('active');
+        });
 
-      // Close mobile menu when clicking outside
-      document.addEventListener('click', (e) => {
-        if (!mobileMenu.contains(e.target) && e.target !== mobileMenuButton) {
-          mobileMenu.classList.add('hidden');
-          mobileMenu.classList.remove('active');
-        }
-      });
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+          if (!mobileMenu.contains(e.target) && e.target !== mobileMenuButton) {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('active');
+          }
+        });
+      }
 
       // Smooth Scrolling for Anchor Links
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
